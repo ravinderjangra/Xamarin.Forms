@@ -218,7 +218,6 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 		{
 			base.OnAttachedToWindow();
 			PageController.SendAppearing();
-			_fragmentStack.Last().UserVisibleHint = true;
 			RegisterToolbar();
 			UpdateToolbar();
 		}
@@ -749,7 +748,7 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 				Device.StartTimer(TimeSpan.FromMilliseconds(1), () =>
 				{
 					tcs.TrySetResult(true);
-					fragment.UserVisibleHint = true;
+					Current.SendAppearing();
 					UpdateToolbar();
 
 					return false;
