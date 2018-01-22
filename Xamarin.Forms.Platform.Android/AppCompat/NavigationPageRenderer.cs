@@ -734,7 +734,7 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 				Device.StartTimer(TimeSpan.FromMilliseconds(TransitionDuration), () =>
 				{
 					tcs.TrySetResult(true);
-					Current.SendAppearing();
+					Current?.SendAppearing();
 					if (removed)
 					{
 						UpdateToolbar();
@@ -748,7 +748,7 @@ namespace Xamarin.Forms.Platform.Android.AppCompat
 				Device.StartTimer(TimeSpan.FromMilliseconds(1), () =>
 				{
 					tcs.TrySetResult(true);
-					Current.SendAppearing();
+					Current?.SendAppearing();
 					UpdateToolbar();
 
 					return false;
