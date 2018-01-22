@@ -80,6 +80,12 @@
       <Project>{9DB2F292-8034-4E06-89AD-98BBDA4306B9}</Project>
       <Name>Xamarin.Forms.Xaml</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Forms.ControlGallery.Android\Xamarin.Forms.ControlGallery.Android.csproj">
+      <Project>{1346A7F1-4457-4BB4-A371-2C8E28BBD53E}</Project>
+      <Name>Xamarin.Forms.ControlGallery.Android</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -87,4 +93,7 @@
   <Import Project="..\Xamarin.Forms.Controls.Issues\Xamarin.Forms.Controls.Issues.Shared\Xamarin.Forms.Controls.Issues.Shared.projitems" Label="Shared" />
   <Import Project="..\Xamarin.Forms.Core.UITests.Shared\Xamarin.Forms.Core.UITests.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Target Name="AfterBuild">  
+     <Delete Files="bin/$(Configuration)/System.Net.Http.dll" /> 
+  </Target> 
  </Project>
