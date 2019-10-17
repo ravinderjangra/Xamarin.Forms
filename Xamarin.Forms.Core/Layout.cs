@@ -54,6 +54,8 @@ namespace Xamarin.Forms
 	{
 		public static readonly BindableProperty IsClippedToBoundsProperty = BindableProperty.Create("IsClippedToBounds", typeof(bool), typeof(Layout), false);
 
+		public static readonly BindableProperty ShadowViewProperty = BindableProperty.Create("ShadowView", typeof(ShadowView), typeof(Layout), null);
+
 		public static readonly BindableProperty CascadeInputTransparentProperty = BindableProperty.Create(
 			nameof(CascadeInputTransparent), typeof(bool), typeof(Layout), true);
 
@@ -81,6 +83,12 @@ namespace Xamarin.Forms
 		{
 			get { return (bool)GetValue(IsClippedToBoundsProperty); }
 			set { SetValue(IsClippedToBoundsProperty, value); }
+		}
+
+		public ShadowView Shadow
+		{
+			get { return (ShadowView)GetValue(ShadowViewProperty); }
+			set { SetValue(ShadowViewProperty, value); }
 		}
 
 		public Thickness Padding
